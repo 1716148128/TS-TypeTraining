@@ -1,0 +1,2 @@
+// 如果要替换的字符串为空，就代表没有内容替换，如果不为空，就递归调用
+type ReplaceAll<S extends string, From extends string, To extends string> = From extends '' ? S : S extends `${infer R}${From}${infer P}` ? `${ReplaceAll<R,From,To>}${To}${ReplaceAll<P, From, To>}` : S

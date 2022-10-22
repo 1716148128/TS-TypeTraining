@@ -1,0 +1,2 @@
+// U 如果是数组，我们就拿 T 的第一元素跟 U[number] 对比，如果为 true，我们就不 push 这个元素
+type Without<T extends any[], U extends any[] | any> = T extends [infer A, ...infer B] ? U extends any[] ? A extends U[number] ? [...Without<B, U>] : [A, ...Without<B, U>] : A extends U ? [...Without<B, U>] : [A, ...Without<B, U>] : []

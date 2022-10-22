@@ -1,0 +1,1 @@
+type Shift<T extends any[]> = T['length'] extends 0 | 1 ? [] : T extends [infer a,...infer arr] ? arr : []

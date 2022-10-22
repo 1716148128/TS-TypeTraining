@@ -1,0 +1,1 @@
+type IsTuple<T> = [T] extends [never] ? false : T extends ([unknown] | Readonly<[unknown]> | []) ? true : false

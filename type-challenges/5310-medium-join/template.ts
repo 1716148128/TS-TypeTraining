@@ -1,0 +1,1 @@
+type Join<T extends string[], U extends number | string,S extends string = ''> = T extends [infer A extends string,...infer args extends string[]] ? args extends [] ? `${S}${A}` : Join<args,U,`${S}${A}${U}`> : S
